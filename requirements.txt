@@ -1,0 +1,4 @@
+aiohttp
+aiolimiter
+python-dotenv
+tqdm
