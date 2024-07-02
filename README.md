@@ -9,15 +9,17 @@ GitHub Star Counter is a CLI tool that analyzes plaintext/markdown files for Git
 ## Installation
 ### Prerequisites
 - Github Access Token
+  - ([link](https://github.com/settings/tokens?type=beta)) Github -> top right Account -> Settings -> Developer settings -> Personal access tokens -> Fine-grained tokens -> Generate new token
+  - Use the "Public Repositories (read-only)" scope
 - Python 3.10 or higher (Tested on Python 3.12.4)
 - pip
 
 ### Steps
 1. Clone the repository:
-```bash
-git clone https://github.com/NoahFrank/github-star-counter
-cd github-star-counter
-```
+    ```bash
+    git clone https://github.com/NoahFrank/github-star-counter
+    cd github-star-counter
+    ```
 2. Create a virtual environment:
     - `python -m venv venv`
 3. Activate the virtual environment:
@@ -108,6 +110,12 @@ Rank  Repository                                         Stars      URL
 ```
 
 ## FAQ
+### Q: How long does the sqlite3 database cache the stars for a given repositroy?
+For 7 days after the original star data was fetched.
+
+### Q: What's the difference between the console output and the output file?
+A: The console output shows only the top N repositories (as specified by the --top option), while the output file (if specified using -o or --output) contains all repositories found, regardless of the --top value.
+
 ### Q: How do I use the rate limiting options?
 A: You can adjust the rate limiting by using the `--max-requests` and `--time-period` options. For example, to set a limit of 5 requests every 2 seconds, you would run:
 
@@ -121,9 +129,3 @@ A: Ensure you've set up your GitHub token correctly in the `.env` file. If the e
 
 ### Q: The script is running slowly. Can I speed it up?
 A: The script uses caching in an sqlite3 db locally to improve performance. Subsequent runs will be faster. You can also try reducing the number of files processed at once.
-
-### Q: How long does the sqlite3 database cache the stars for a given repositroy?
-For 7 days after the original star data was fetched.
-
-### Q: What's the difference between the console output and the output file?
-A: The console output shows only the top N repositories (as specified by the --top option), while the output file (if specified using -o or --output) contains all repositories found, regardless of the --top value.
