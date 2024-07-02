@@ -15,7 +15,7 @@ GitHub Star Counter is a CLI tool that analyzes plaintext/markdown files for Git
 ### Steps
 1. Clone the repository:
 ```bash
-git clone https://github.com/USERNAME/github-star-counter.git
+git clone https://github.com/NoahFrank/github-star-counter
 cd github-star-counter
 ```
 2. Create a virtual environment:
